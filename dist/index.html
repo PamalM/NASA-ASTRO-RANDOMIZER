@@ -5,13 +5,16 @@
     <title>NASA ASTRO Randomizer</title>
   </head>
 
-  <body>
-    <div id="app">
-      <h1>{{title}}</h1>
+  <body class="bg-blue-200 h-3/4 w-full">
+    <div id="app" class="bg-blue-50 rounded-lg h-3/4 w-3/4">
+      <h1 class="uppercase font-extrabold text-lg rounded-lg bg-red-200 p-3">{{title}}</h1>
       <img v-bind:src="image" alt="">
-      <h1>{{date}}</h1>
-      <h3>{{desc}}</h3>
-      <button v-on:click="getApod()" class="bg-red-700">Get Today's APOD</button>
+      <h1 class="uppercase font-bold m-2 tracking-widest bg-blue-200 p-3 rounded-lg">{{date}}</h1>
+      <h3 class="bg-red-200 p-3 rounded-lg">{{desc}}</h3>
+      <div class="bg-blue-200 items-center m-3 p-3 rounded-lg">
+        <button v-on:click="getApod()" class="bg-red-700 float-left hover:bg-red-500">Get Today's APOD</button>
+        <button v-on:click="randomApod()" class="bg-blue-700 float-right hover:bg-blue-500">Get Random APOD</button>
+      </div>
     </div>
     <script src="https://unpkg.com/vue@3.0.5"></script>
     <script src="./app.js"></script>
