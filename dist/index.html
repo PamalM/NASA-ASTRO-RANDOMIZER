@@ -2,15 +2,16 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css">
-    <title>NADA ASTRO Randomizer</title>
+    <title>NASA ASTRO Randomizer</title>
   </head>
 
   <body>
     <div id="app">
-      <img v-bind:class="gender" v-bind:src="picture" v-bind:alt="firstName">
-      <h1>{{firstName}} {{lastName}}</h1>
-      <h3>{{email}}</h3>
-      <button v-on:click="getUser()" class="bg-red-700">Get Random User</button>
+      <h1>{{title}}</h1>
+      <img v-bind:src="image" alt="">
+      <h1>{{date}}</h1>
+      <h3>{{desc}}</h3>
+      <button v-on:click="getApod()" class="bg-red-700">Get Today's APOD</button>
     </div>
     <script src="https://unpkg.com/vue@3.0.5"></script>
     <script src="./app.js"></script>

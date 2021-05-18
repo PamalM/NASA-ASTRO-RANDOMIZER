@@ -1,23 +1,29 @@
 const app = Vue.createApp({
   data() {
     return {
-      firstName: "Pamal",
-      lastName: "Mangat",
-      email: "mangat@gmail.com",
-      gender: "male",
-      picture: "https://randomuser.me/api/portraits/men/50.jpg"
+      title: '',
+      image: '',
+      desc: '',
+      date: ''
     }
   },
-  methods: {
-    async getUser(){
-      const res = await fetch('https://randomuser.me/api')
-      const { results } = await res.json()
-      console.log(results)
+  methods: {    
+    // Function to get APOD for today's date.
+    async getApod() {
+      // Get APOD for current date.
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'https://api.nasa.gov/planetary/apod?api_key=RXK0pf2PFdSNOqRzbIgLmBWNboZDWq766gYb2UQC');
+      xhr.responseType = 'json';
+      xhr.send();
 
-      this.firstName = results[0].name.first
-      this.lastName = results[0].name.lastName
-      this.email = results[0].email
-      this.picture = results[0].picture.large
+      // Update output to response from NASA API.
+      xhr.onload = () => {
+        const result = xhr.response;
+        this.title = result['title'];
+        this.date = result['date'];
+        this.desc = result['explanation'];
+        this.image = result['hdurl'];
+      };
     }
   }
 })
