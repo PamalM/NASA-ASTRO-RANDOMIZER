@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title>NASA ASTRO Randomizer</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <h1>{{title}}</h1>
+      <img v-bind:src="image" alt="">
+      <h1>{{date}}</h1>
+      <h3>{{desc}}</h3>
+      <button v-on:click="getApod()" class="bg-red-700">Get Today's APOD</button>
+    </div>
+    <script src="https://unpkg.com/vue@3.0.5"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
