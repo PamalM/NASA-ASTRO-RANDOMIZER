@@ -24,6 +24,11 @@ const app = Vue.createApp({
         this.desc = result['explanation'];
         this.image = result['hdurl'];
       };
+    },
+
+    // Function to get random APOD for any previous date.
+    async randomApod() {
+      alert('random');
     }
   }
 })
