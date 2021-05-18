@@ -187398,20 +187398,21 @@ body {
 }
 
 #app {
-  width: 800px;
-  height: 200vh;
+  /*width: 800px;
+  height: 200vh;*/
   margin: auto;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2em;
 }
 
 h1,
 h3 {
   margin-bottom: 1rem;
-  font-weight: normal;
+  font-weight: bold;
 }
 
 img {
